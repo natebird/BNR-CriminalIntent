@@ -153,14 +153,15 @@ public class CrimeListFragment extends Fragment {
             mTitleTextView = (TextView) itemView.findViewById(R.id.list_item_crime_title_text_view);
             mDateTextView = (TextView) itemView.findViewById(R.id.list_item_crime_date_text_view);
             mSolvedCheckBox = (CheckBox) itemView.findViewById(R.id.list_item_crime_solved_check_box);
-            mSolvedCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                @Override
-                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    // Set the crime's solved property
-                    mCrime.setSolved(isChecked);
-                    CrimeLab.get(getActivity()).updateCrime(mCrime);
-                }
-            });
+            mSolvedCheckBox.setClickable(false);
+//            mSolvedCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//                @Override
+//                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                    // Set the crime's solved property
+//                    mCrime.setSolved(isChecked);
+//                    CrimeLab.get(getActivity()).updateCrime(mCrime);
+//                }
+//            });
         }
 
         public void bindCrime(Crime crime) {
